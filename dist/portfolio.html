@@ -8,19 +8,56 @@
     <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
+    <style>
+        /* Custom CSS for fade-in animation */
+    .fade-in-left {
+      animation: fadeInLeft 0.5s forwards;
+    }
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* Hide the menu with animation */
+    .fade-out-right {
+      animation: fadeOutRight 0.5s forwards;
+    }
+    @keyframes fadeOutRight {
+      0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+    </style>
   </head>
   <body class="bg-slate-900 dark:bg-slate-600">
     <div class="grid md:grid-cols-12 m-[50px] gap-3">
       <!-- Left-Container -->
-      <div class="bg-slate-200 dark:bg-slate-900 rounded md:col-span-4 md:block hidden pt-10 overflow-hidden">
+      <div class="bg-slate-200 dark:bg-slate-900 mobile-menu rounded md:col-span-4 md:block hidden pt-10 overflow-hidden">
+        <!-- Mobile menu button -->
+        <div class="m-3 flex items-center sm:hidden ">
+          <button class="mobile-menu-back-button ">
+            <i class="fa-solid fa-arrow-left text-gray-600 text-3xl"></i>
+          </button>
+        </div>
+
         <!-- Profile Picture -->
-        <img src="https://i.pinimg.com/564x/c1/38/45/c13845399ed15078f04f4819f5d522ba.jpg" alt="Profile Photo" class="rounded-full mx-auto m-3 hover:bg-yellow-500 bg-slate-800 dark:bg-slate-400 h-[350px] w-[350px] shadow-2xl p-2" />
+        <img src="https://i.pinimg.com/564x/c1/38/45/c13845399ed15078f04f4819f5d522ba.jpg" alt="Profile Photo" class="rounded-full mx-auto m-3 hover:bg-yellow-500 dark:hover:bg-yellow-500 bg-slate-800 dark:bg-slate-400 h-[350px] w-[350px] shadow-2xl p-2" />
 
         <!-- Social Media Links -->
         <div class="social-media-links mx-9 text-3xl text-center place-content-center">
-          <a href="https://www.facebook.com/pruthu9695" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-facebook m-5"></i></a>
-          <a href="https://www.instagram.com/pruthvirajupadhyay/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-square-instagram m-5"></i></a>
-          <a href="https://www.linkedin.com/in/pruthviraj-upadhyay-92a42a187/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-linkedin m-5"></i></a>
+          <a href="https://www.facebook.com/pruthu9695" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500 dark:hover:text-yellow-500"><i class="fa-brands fa-facebook m-5"></i></a>
+          <a href="https://www.instagram.com/pruthvirajupadhyay/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500 dark:hover:text-yellow-500"><i class="fa-brands fa-square-instagram m-5"></i></a>
+          <a href="https://www.linkedin.com/in/pruthviraj-upadhyay-92a42a187/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500 dark:hover:text-yellow-500"><i class="fa-brands fa-linkedin m-5"></i></a>
         </div>
 
         <!-- Contact Informations -->
@@ -113,21 +150,31 @@
 
       <!-- Right-Container -->
       <div class="bg-slate-100 dark:bg-slate-800 rounded md:col-span-8 text-start pt-10">
+        <div class="flex flex-col">
+          <div class="modeToogle flex justify-between">
+            <!-- Mobile menu button -->
+            <div class="m-3 flex items-center sm:hidden">
+              <button class="mobile-menu-button">
+                <span class="block w-8 h-1 bg-gray-600 mb-1"></span>
+                <span class="block w-8 h-1 bg-gray-600 mb-1"></span>
+                <span class="block w-8 h-1 bg-gray-600"></span>
+              </button>
+            </div>
 
-        <!-- Mode change- Toogle Switch -->
-        <div class="modeToogle">
-          <div class="flex items-center justify-end m-3">
-            <span class="text-lg font-bold m-3 text-slate-700 dark:text-slate-200">Dark Mode</span>
-            <!-- Hidden checkbox -->
-            <input type="checkbox" id="toggle" class="toggle-checkbox hidden" style="display: none" />
-            <!-- Label that styles the switch -->
-            <label for="toggle" class="toggle-label flex items-center cursor-pointer w-12 h-6 rounded-full relative" style="background-color: #d1d5db">
-              <!-- Ball inside the switch -->
-              <span class="toggle-ball absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300" style="top: 0.125rem; left: 0.125rem; transition: transform 0.3s"></span>
-            </label>
+            <!-- Mode change- Toogle Switch -->
+            <div class="flex items-center m-3">
+              <span class="text-lg font-bold m-3 text-slate-700 dark:text-slate-200">Dark Mode</span>
+              <!-- Hidden checkbox -->
+              <input type="checkbox" id="toggle" class="toggle-checkbox hidden" style="display: none" />
+              <!-- Label that styles the switch -->
+              <label for="toggle" class="toggle-label flex items-center cursor-pointer w-12 h-6 rounded-full relative" style="background-color: #d1d5db">
+                <!-- Ball inside the switch -->
+                <span class="toggle-ball absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300" style="top: 0.125rem; left: 0.125rem; transition: transform 0.3s"></span>
+              </label>
+            </div>
           </div>
         </div>
-        
+
         <!-- Name-Container -->
         <div class="nameContainer w-[80%] mx-auto flex flex-col items-start justify-center mb-3">
           <h1 class="text-5xl mt-2 capitalize text-slate-400 dark:text-slate-200 font-bold">
@@ -217,18 +264,46 @@
 
     <script>
       // Javascript for toogle switch of dark mode
-      document.getElementById('toggle').addEventListener('change', function() {
-      const label = this.nextElementSibling;
-      const ball = label.querySelector('span');
-      if (this.checked) {
-        label.style.backgroundColor = '#708090'; 
-        ball.style.transform = 'translateX(1.25rem)'; // Move ball to the right
-        document.documentElement.classList.add('dark'); // Enable dark mode
+      document.getElementById("toggle").addEventListener("change", function () {
+        const label = this.nextElementSibling;
+        const ball = label.querySelector("span");
+        if (this.checked) {
+          label.style.backgroundColor = "#708090";
+          ball.style.transform = "translateX(1.25rem)"; // Move ball to the right
+          document.documentElement.classList.add("dark"); // Enable dark mode
+        } else {
+          label.style.backgroundColor = "#d1d5db"; // Gray background when unchecked
+          ball.style.transform = "translateX(0)"; // Move ball to the left
+          document.documentElement.classList.remove("dark"); // Disable dark mode
+        }
+      });
+
+
+      // Script for mobile-menu button
+    const btn = document.querySelector(".mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+    const backBtn = document.querySelector(".mobile-menu-back-button");
+
+    btn.addEventListener("click", () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden', 'fade-out-right');
+        menu.classList.add('fade-in-left');
       } else {
-        label.style.backgroundColor = '#d1d5db'; // Gray background when unchecked
-        ball.style.transform = 'translateX(0)'; // Move ball to the left
-        document.documentElement.classList.remove('dark'); // Disable dark mode
+        menu.classList.remove('fade-in-left');
+        menu.classList.add('fade-out-right');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 500); // Match the duration of the fade-out animation
       }
+      btn.classList.toggle("open");
+    });
+
+    backBtn.addEventListener("click", () => {
+      menu.classList.remove('fade-in-left');
+      menu.classList.add('fade-out-right');
+      setTimeout(() => {
+        menu.classList.add('hidden');
+      }, 500); // Match the duration of the fade-out animation
     });
     </script>
   </body>

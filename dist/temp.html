@@ -3,28 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Poco F5 Test</title>
+  <title>Responsive Navbar with Animation</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
+    /* Custom CSS for navbar toggle button animation */
+    .navbar-burger span {
+      transition: transform 0.3s ease;
     }
-    .container {
-      text-align: center;
+    .navbar-burger.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .navbar-burger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .navbar-burger.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+    /* Custom CSS for fade-in animation */
+    .fade-in-left {
+      animation: fadeInLeft 0.5s forwards;
+    }
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    /* Hide the menu with animation */
+    .fade-out-right {
+      animation: fadeOutRight 0.5s forwards;
+    }
+    @keyframes fadeOutRight {
+      0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Poco F5 Viewport Test</h1>
-    <p>Resolution: 2400x1080 pixels</p>
-    <p>Aspect Ratio: 20:9</p>
-  </div>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-4">
+          <!-- Logo -->
+          <div>
+            <a href="#" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+              <svg class="h-6 w-6 text-blue-500 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+              <span class="font-bold">Brand</span>
+            </a>
+          </div>
+
+          <!-- Primary Navbar items -->
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Home</a>
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">About</a>
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Services</a>
+            <a href="#" class="py-5 px-3 text-gray-700 hover:text-gray-900">Contact</a>
+          </div>
+        </div>
+
+        <!-- Secondary Navbar items -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#" class="py-5 px-3">Login</a>
+          <a href="#" class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 rounded transition duration-300">Signup</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button class="mobile-menu-button navbar-burger">
+            <span class="block w-5 h-0.5 bg-gray-600 mb-1"></span>
+            <span class="block w-5 h-0.5 bg-gray-600 mb-1"></span>
+            <span class="block w-5 h-0.5 bg-gray-600"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, hidden by default -->
+    <div class="mobile-menu hidden md:hidden">
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">About</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Services</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Contact</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Login</a>
+      <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Signup</a>
+    </div>
+  </nav>
+
+  <script>
+    // Toggle mobile menu visibility with fade in/out animation
+    const btn = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+
+    btn.addEventListener('click', () => {
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden', 'fade-out-right');
+        menu.classList.add('fade-in-left');
+      } else {
+        menu.classList.remove('fade-in-left');
+        menu.classList.add('fade-out-right');
+        setTimeout(() => {
+          menu.classList.add('hidden');
+        }, 500); // Match the duration of the fade-out animation
+      }
+      btn.classList.toggle('open');
+    });
+  </script>
+
 </body>
 </html>
