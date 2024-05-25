@@ -9,16 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
   </head>
-  <body class=" bg-slate-900 dark:bg-slate-600">
-    <div class="grid md:grid-cols-12 m-[50px] gap-3 ">
+  <body class="bg-slate-900 dark:bg-slate-600">
+    <div class="grid md:grid-cols-12 m-[50px] gap-3">
       <!-- Left-Container -->
       <div class="bg-slate-200 dark:bg-slate-900 rounded md:col-span-4 md:block hidden pt-10 overflow-hidden">
-
         <!-- Profile Picture -->
         <img src="https://i.pinimg.com/564x/c1/38/45/c13845399ed15078f04f4819f5d522ba.jpg" alt="Profile Photo" class="rounded-full mx-auto m-3 hover:bg-yellow-500 bg-slate-800 dark:bg-slate-400 h-[350px] w-[350px] shadow-2xl p-2" />
 
         <!-- Social Media Links -->
-        <div class="social-media-links mx-9 text-3xl  text-center place-content-center">
+        <div class="social-media-links mx-9 text-3xl text-center place-content-center">
           <a href="https://www.facebook.com/pruthu9695" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-facebook m-5"></i></a>
           <a href="https://www.instagram.com/pruthvirajupadhyay/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-square-instagram m-5"></i></a>
           <a href="https://www.linkedin.com/in/pruthviraj-upadhyay-92a42a187/" class="text-slate-700 dark:text-slate-400 hover:text-yellow-500"><i class="fa-brands fa-linkedin m-5"></i></a>
@@ -39,7 +38,9 @@
             </div>
             <div class="flex mt-2 text-xl">
               <i class="fa-solid fa-location-dot p-2 text-xl text-slate-900 dark:text-slate-200"></i>
-              <p class="text-slate-700 dark:text-slate-200 font-bold">&nbsp <a href="https://maps.app.goo.gl/E8ZoQtUWruR2TUfJ8" target="_blank" class="hover:underline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias amet soluta repellat ipsa iste ex ratione! Eos, officiis eveniet! Autem.</a></p>
+              <p class="text-slate-700 dark:text-slate-200 font-bold">
+                &nbsp <a href="https://maps.app.goo.gl/E8ZoQtUWruR2TUfJ8" target="_blank" class="hover:underline">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias amet soluta repellat ipsa iste ex ratione! Eos, officiis eveniet! Autem.</a>
+              </p>
             </div>
           </div>
         </div>
@@ -70,7 +71,9 @@
             </div>
             <div class="flex mt-4">
               <span class="text-xl font-bold text-slate-900 dark:text-slate-400">2024</span>
-              <p class="text-slate-700 dark:text-slate-200"><span class="font-semibold text-xl">&nbsp <a href="#" class="hover:underline" target="_blank" class="hover:underline">MEARN Stack Developement</a></span> <br /><span class="text-slate-500 dark:text-slate-100">&nbsp (Eazy Learn Academy, Bhavnagar)</span></p>
+              <p class="text-slate-700 dark:text-slate-200">
+                <span class="font-semibold text-xl">&nbsp <a href="#" class="hover:underline" target="_blank" class="hover:underline">MEARN Stack Developement</a></span> <br /><span class="text-slate-500 dark:text-slate-100">&nbsp (Eazy Learn Academy, Bhavnagar)</span>
+              </p>
             </div>
           </div>
         </div>
@@ -110,9 +113,26 @@
 
       <!-- Right-Container -->
       <div class="bg-slate-100 dark:bg-slate-800 rounded md:col-span-8 text-start pt-10">
+
+        <!-- Mode change- Toogle Switch -->
+        <div class="modeToogle">
+          <div class="flex items-center justify-end m-3">
+            <span class="text-lg font-bold m-3 text-slate-700 dark:text-slate-200">Dark Mode</span>
+            <!-- Hidden checkbox -->
+            <input type="checkbox" id="toggle" class="toggle-checkbox hidden" style="display: none" />
+            <!-- Label that styles the switch -->
+            <label for="toggle" class="toggle-label flex items-center cursor-pointer w-12 h-6 rounded-full relative" style="background-color: #d1d5db">
+              <!-- Ball inside the switch -->
+              <span class="toggle-ball absolute w-5 h-5 bg-white rounded-full shadow-md transform transition-transform duration-300" style="top: 0.125rem; left: 0.125rem; transition: transform 0.3s"></span>
+            </label>
+          </div>
+        </div>
+        
         <!-- Name-Container -->
         <div class="nameContainer w-[80%] mx-auto flex flex-col items-start justify-center mb-3">
-          <h1 class="text-5xl mt-2 capitalize text-slate-400 dark:text-slate-200 font-bold"><i class="fa-solid fa-user text-slate-700 dark:text-slate-300"></i><span class="capitalize border-spacing-3 p-2 text-slate-600 dark:text-slate-400" style="text-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5)">&nbsp PruthviRaj</span> Upadhyay</h1>
+          <h1 class="text-5xl mt-2 capitalize text-slate-400 dark:text-slate-200 font-bold">
+            <i class="fa-solid fa-user text-slate-700 dark:text-slate-300"></i><span class="capitalize border-spacing-3 p-2 text-slate-600 dark:text-slate-400" style="text-shadow: 6px 5px 8px rgba(0, 0, 0, 0.5)">&nbsp PruthviRaj</span> Upadhyay
+          </h1>
           <h2 class="text-2xl mt-4 ml-2 text-slate-500 dark:text-slate-300 font-medium">Software Developer</h2>
           <p class="mt-2 ml-2 text-slate-900 dark:text-slate-200 text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur doloribus, eveniet libero repellat, cum maiores, quas quidem dolores totam quos excepturi earum accusamus quis perspiciatis eum veritatis! Unde nulla impedit iusto quae debitis, officiis nostrum cum architecto
@@ -131,7 +151,9 @@
                 <h6 class="text-2xl mt-3 font-medium text-slate-700 dark:text-slate-300">2024 - Persuing</h6>
                 <p class="text-3xl font-semibold mt-2 text-slate-500 dark:text-slate-100">Floatbot India pvt. ltd.</p>
                 <h3 class="text-xl font-medium mt-2 text-slate-700 dark:text-slate-400">Software Developer</h3>
-                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.</p>
+                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.
+                </p>
                 <div class="w-[90%] h-1 border-b-2 border-slate-600 mt-8 rounded-xl justify-center items-center flex flex-col text-center mx-auto"></div>
               </li>
             </ul>
@@ -148,8 +170,10 @@
                 <h6 class="text-2xl mt-3 font-medium text-slate-700 dark:text-slate-300">2023</h6>
                 <p class="text-3xl font-semibold mt-2 text-slate-500 dark:text-slate-100">Safari Tourism</p>
                 <h3 class="text-xl font-medium mt-2 text-slate-700 dark:text-slate-400">HTML, CSS & Bootstrap framework</h3>
-                <p class="text-2xl font-semibold mt-2 text-yellow-500"><a href="https://bravan1407.github.io/SafariTourism_Bootstrap1/">Visit WebSite</a></p>
-                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.</p>
+                <p class="text-2xl font-semibold m/t-2 text-yellow-500"><a href="https://bravan1407.github.io/SafariTourism_Bootstrap1/">Visit WebSite</a></p>
+                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.
+                </p>
                 <div class="w-[90%] h-1 border-b-2 border-slate-600 mt-8 rounded-xl justify-center items-center flex flex-col text-center mx-auto"></div>
               </li>
 
@@ -158,7 +182,9 @@
                 <p class="text-3xl font-semibold mt-2 text-slate-500 dark:text-slate-100">MCRS Hostel</p>
                 <h3 class="text-xl font-medium mt-2 text-slate-700 dark:text-slate-400">HTML, CSS & Bootstrap framework</h3>
                 <p class="text-2xl font-semibold mt-2 text-yellow-500"><a href="https://bravan1407.github.io/Hostel/html/index.html">Visit WebSite</a></p>
-                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.</p>
+                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.
+                </p>
                 <div class="w-[90%] h-1 border-b-2 border-slate-600 mt-8 rounded-xl justify-center items-center flex flex-col text-center mx-auto"></div>
               </li>
 
@@ -167,7 +193,9 @@
                 <p class="text-3xl font-semibold mt-2 text-slate-500 dark:text-slate-100">NGO-Petting</p>
                 <h3 class="text-xl font-medium mt-2 text-slate-700 dark:text-slate-400">HTML, CSS & Bootstrap framework</h3>
                 <p class="text-2xl font-semibold mt-2 text-yellow-500"><a href="https://bravan1407.github.io/NGO-Petting/html/index.html">Visit WebSite</a></p>
-                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.</p>
+                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.
+                </p>
                 <div class="w-[90%] h-1 border-b-2 border-slate-600 mt-8 rounded-xl justify-center items-center flex flex-col text-center mx-auto"></div>
               </li>
 
@@ -176,7 +204,9 @@
                 <p class="text-3xl font-semibold mt-2 text-slate-500 dark:text-slate-100">Resume With Dark Mode</p>
                 <h3 class="text-xl font-medium mt-2 text-slate-700 dark:text-slate-400">HTML, CSS & TailwindCss</h3>
                 <p class="text-2xl font-semibold mt-2 text-yellow-500"><a href="https://bravan1407.github.io/NGO-Petting/html/index.html">Visit WebSite</a></p>
-                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.</p>
+                <p class="mt-2 text-slate-900 dark:text-slate-200 text-lg">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio similique minima mollitia saepe, harum cupiditate perferendis dicta consequatur incidunt voluptatum nostrum, officia, quae fugit magnam dolores quis corrupti delectus.
+                </p>
                 <div class="w-[90%] h-1 border-b-2 border-slate-600 mt-8 rounded-xl justify-center items-center flex flex-col text-center mx-auto"></div>
               </li>
             </ul>
@@ -184,5 +214,22 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Javascript for toogle switch of dark mode
+      document.getElementById('toggle').addEventListener('change', function() {
+      const label = this.nextElementSibling;
+      const ball = label.querySelector('span');
+      if (this.checked) {
+        label.style.backgroundColor = '#708090'; 
+        ball.style.transform = 'translateX(1.25rem)'; // Move ball to the right
+        document.documentElement.classList.add('dark'); // Enable dark mode
+      } else {
+        label.style.backgroundColor = '#d1d5db'; // Gray background when unchecked
+        ball.style.transform = 'translateX(0)'; // Move ball to the left
+        document.documentElement.classList.remove('dark'); // Disable dark mode
+      }
+    });
+    </script>
   </body>
 </html>
